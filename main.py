@@ -4,8 +4,8 @@ import ui
 
 
 def main():
-    """Method starts program and checks users access"""
-    malopolska = data.Data("malopolska.csv")
+    """Method starts program and allows user to choose an option"""
+    malopolska = data.Data('malopolska.csv')
     list_from_malopolska = malopolska.malopolska_list
     choose = None
     while not choose:

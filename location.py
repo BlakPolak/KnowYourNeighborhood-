@@ -10,9 +10,12 @@ class Location:
         self.name = name
         self.type = type
 
-
     @staticmethod
     def statistics(malopolska_list):
+        """
+        Lists statistics.
+        Returns: list with statistics
+        """
         statistics = {}
         stats_list = []
         for item in malopolska_list[1:]:
@@ -22,7 +25,6 @@ class Location:
                 statistics[item.type] += 1
             if item.type == "miasto na prawach powiatu":
                 statistics["powiat"] += 1
-        print (statistics)
         for key, value in statistics.items():
             stats_list.append([str(value), key])
         stats_list.sort()
@@ -30,6 +32,10 @@ class Location:
 
     @staticmethod
     def three_cities_with_longest_names(malopolska_list):
+        """
+        Shows three cities with longest names.
+        Returns: list with three cities
+        """
         longest = []
         for element in malopolska_list:
             if element.type == 'miasto':
@@ -46,6 +52,10 @@ class Location:
 
     @staticmethod
     def county_with_largest_number_of_communities(malopolska_list):
+        """
+        Displays county name with the largest number of communities.
+        Returns: prepared list with county name and number of communities
+        """
         counties = {}
         for element in malopolska_list:
             if element.type == 'powiat':
@@ -66,6 +76,10 @@ class Location:
 
     @staticmethod
     def locations_that_belong_to_more_than_one_category(malopolska_list):
+        """
+        Displays locations that belong to more than one category.
+        Returns: list with locaations
+        """
         location = {}
         for element in malopolska_list:
             if element.community:
@@ -79,11 +93,14 @@ class Location:
             if len(value) > 1:
                 list_to_print.append([str(key), ", ".join(str(x) for x in value)])
         list_to_print.sort()
-        print (list_to_print)
         return list_to_print
 
     @staticmethod
     def advanced_search(malopolska_list):
+        """
+        Allows to search for location.
+        Returns: list with results
+        """
         results = []
         search = ui.Ui.get_inputs([''], 'Type location:')
         search = search[0].lower()

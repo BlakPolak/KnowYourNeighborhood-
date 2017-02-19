@@ -1,6 +1,7 @@
 import location
 
 class Data:
+    """Class responsible for prepare data to use"""
 
     def __init__(self, malopolska_csv):
         self.malopolska_table = self.import_csv(malopolska_csv)

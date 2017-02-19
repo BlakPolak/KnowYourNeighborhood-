@@ -18,7 +18,6 @@ class Ui:
         option = input("Your choice: ")
         return option
 
-
     @staticmethod
     def get_inputs(list_labels, title):
         """Method ask user for input"""
@@ -28,7 +27,6 @@ class Ui:
             user_input = input(item + ' ').strip()
             inputs.append(user_input)
         return inputs
-
 
     @staticmethod
     def print_table(table, title_list):
